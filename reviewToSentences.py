@@ -6,6 +6,8 @@ from nltk.parse import stanford
 os.environ['STANFORD_PARSER'] = './stanford-parser.jar'
 os.environ['STANFORD_MODELS'] = './stanford-parser-3.5.2-models.jar'
 
+nltk.internals.config_java(options='-xmx2G')
+
 parser = stanford.StanfordParser(model_path="./englishPCFG.ser.gz")
 
 
@@ -35,7 +37,10 @@ def single_review_to_sentences(review_text):
 def reviews_to_sentences(reviews):
     all_sentences = []
     for review in reviews:
-        result = single_review_to_sentences(review)
-        all_sentences.extend(result)
+        review_blob = TextBlob(review)
+        review_sentences = review_blob.sentences
+        for review_sentence in review_sentences:
+            print review_sentence.raw
+            result = single_review_to_sentences(review_sentence.raw)
+            all_sentences.extend(result)
     return all_sentences
-
