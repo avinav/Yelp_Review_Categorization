@@ -19,7 +19,7 @@ def index():
                            cat_score = cat_score,
                            res = res,
                            name = name)
-i
+
 @app.route('/all',method = ['GET', 'POST'])
 def all_restaurants():
     id_list = np.unique(reviews_df.id)
