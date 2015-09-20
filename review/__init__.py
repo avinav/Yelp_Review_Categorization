@@ -4,7 +4,5 @@ from JsonToDF import get_data
 import pickle
 import os
 
-count = 2
+count = 1000
 reviews_df = get_data(count)
-if os.path.isfile('data.p'):
-    data = pickle.load(open('data.p','r'))

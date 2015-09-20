@@ -12,15 +12,13 @@ from pandas.io.json import json_normalize
 
 
 #file = '/home/zstring/Dropbox/UB/GDG/yelp_dataset_challenge_academic_dataset/smalldataset'
-def get_data(count):
+def get_data(TOTAL_COUNT):
 
     path = '/home/avinav/Dropbox/git/Yelp/yelp_dataset_challenge_academic_dataset'
     #path = "/home/castamere/Downloads/yelp_dataset_challenge_academic_dataset"
-
+    count = 0
     file = path + "/yelp_academic_dataset_business.json"
     df = None
-    count = 0
-    TOTAL_COUNT = count
     with open(file) as f:
         for line in f:
             while True:
@@ -42,7 +40,7 @@ def get_data(count):
                 df = df.append(pd.DataFrame(data_norm[['business_id','categories', 'name']]))
             #print "Shape, ", df.shape
             count = count + 1
-            if count > 100:
+            if count > TOTAL_COUNT:
                 break
     df['restaurant'] = ['Restaurants' in category for category in df.categories]
     
@@ -70,7 +68,7 @@ def get_data(count):
                 df_review = df_review.append(pd.DataFrame(data_norm))
             #print "Shape, ", df.shape
             count = count + 1
-            if count > 100:
+            if count > TOTAL_COUNT:
                 break
     
     df = pd.merge(df_review, df, on='business_id', how='outer')

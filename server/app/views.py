@@ -12,7 +12,8 @@ import pickle
 def index():
     #bus_id = "vcNAWiLM4dR7D2nwwJ7nCA"
     #bus_id = "mVHrayjG3uZ_RLHkLj-AMg"
-    bus_id = "1qCuOcks5HRv67OHovAVpg"
+    #bus_id = "1qCuOcks5HRv67OHovAVpg"
+    bus_id =  "wJr6kSA5dchdgOdwH6dZ2w"
     res = get_reviews(bus_id)
     try:
         cat_score  = get_business_score(res)

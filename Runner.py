@@ -6,8 +6,9 @@ from review.review_score import get_reviews
 from business import get_business_score
 import pickle
 
-count = 2
+count = 1000
 df = get_data(count)
+print df.shape
 id_list = np.unique(reviews_df.business_id)
 data = []
 for _id in id_list:
