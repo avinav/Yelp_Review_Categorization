@@ -1,10 +1,11 @@
 import similarity as sim
 import sentiment as senti
 from reviewToSentences import reviews_to_sentences
+
 def get_business_score(reviews):
     sentences = reviews_to_sentences(reviews)
-    final_cat = {"food":0, "service":0, "hygiene":0, "ambiance":0, "money":0}
-    cat_count = {"food":1, "service":1, "hygiene":1, "ambiance":1, "money":1}
+    final_cat = {"food":0, "service":0,"ambiance":0, "money":0}
+    cat_count = {"food":1, "service":1, "ambiance":1, "money":1}
     for sent in sentences:
         cat = sim.get_similarity(sent)
         sent = senti.get_sentiment(sent)
@@ -15,5 +16,3 @@ def get_business_score(reviews):
             final_cat[key] = final_cat[key] / (1.0 * cat_count[key])
     
     return final_cat
-print "e"
-#print sim.get_similarity("the pizzas are good")

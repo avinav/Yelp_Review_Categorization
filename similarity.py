@@ -5,10 +5,10 @@ from textblob import Word
 def get_similarity(sentence):
 	sentence_words = sentence.split(" ")
 	#sentence_words = ["this", "restaurant", "has", "cheap"]
-	categories = ["food", "service", "hygiene", "ambiance", "money"]
-	categories_score = [0, 0, 0, 0, 0]
+	categories = ["food", "service","ambiance", "money"]
+	categories_score = [0, 0, 0, 0]
 
-	for i in range (0, 5):
+	for i in range (0, 4):
 		category_synset = wn.synset(categories[i] + '.n.01')
 		for word in sentence_words:
 			try:

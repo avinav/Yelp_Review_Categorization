@@ -12,5 +12,3 @@ def get_sentiment(text):
 
 example = "I'm fucking happy"
 print get_sentiment(example)
-
-# print nltk.pos_tag_sents(blob.sentences)
