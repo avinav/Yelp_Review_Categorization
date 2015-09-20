@@ -5,6 +5,7 @@ from review import reviews_df
 from business import get_business_score
 import numpy as np
 import math
+import pickle
 
 @app.route('/', methods = ['GET','POST'])
 @app.route('/index', methods = ['GET','POST'])
@@ -31,7 +32,7 @@ def index():
         name = " ")
 
 
-@app.route('/all', methods = ['GET', 'POST'])
+@app.route('/all_live', methods = ['GET', 'POST'])
 def all_restaurants():
     id_list = np.unique(reviews_df.business_id)
     data = []
@@ -47,7 +48,14 @@ def all_restaurants():
             data.append(_dict)
         except:
             pass
-    return render_template("all_retaurants",
+    return render_template("all_restaurants.html",
+                            title = "Yelp Review Categorization",
+                            data = data)
+
+@app.route('/all', methods = ['GET', 'POST'])
+def all_business():
+    data = pickle.load(open('data.p','r'))
+    return render_template("all_restaurants.html",
                             title = "Yelp Review Categorization",
                             data = data)
 
