@@ -1,7 +1,7 @@
 
 
 def getBusinessScore(reviews):
-    sentences = getSentencesFromReviews(reviews)
+    sentences = reviews_to_sentences(reviews)
     final_cat = {'food': 0, 'service': 0}
     cat_count = {'food': 0, 'service': 0}
     for sent in sentences:
