@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="apna.css">
+
+        <script type="text/javascript">
+        	function generateStars(divLabel, numOfStars) {
+        		maxstars = 5;
+        		console.log(divLabel);
+        		text = "<span class=\"starRating\" id=" + divLabel + "_star\">";
+        		for (i=1; i <= maxstars; i++) {
+        			if (i == maxstars - numOfStars + 1)
+        				text += "<input id=\"rating\" type=\"radio\" name=\"rating\" value=\"" + i + "\" checked>";
+        			else
+        				text += "<input id=\"rating\" type=\"radio\" name=\"rating\" value=\"" + i + "\">";
+        			text += "<label for=\"rating\">" + i + "</label>";
+        		}
+        		text += "</span>";
+        		document.getElementById(divLabel).innerHTML += text;
+        	}
+        </script>
+		
+	</head>
+
+	<body>
+	<div>
+		<div id="firstCategory"> </div> </div>
+		<div id="secondCategory"> </div>
+		<div id="thirdCategory"> </div>
+		<script>
+			generateStars('firstCategory', 2);
+			generateStars('secondCategory', 3);
+			generateStars('thirdCategory', 3);
+		</script>
+
+	</body>
+</html>

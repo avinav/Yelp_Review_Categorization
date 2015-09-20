@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"/>
+<script src="../jquery.barrating.js"></script>
+<script type="text/javascript">
+   $(function() {
+      $('#example').barrating({
+        theme: 'fontawesome-stars'
+      });
+   });
+</script>
+		<link rel="stylesheet" href="css/normalize.min.css">
+                <link rel="stylesheet" href="css/main.css">
+                <link rel="stylesheet" href="css/examples.css">
+
+                <!-- Icons -->
+                <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+                <style>
+                        @font-face {
+                                font-family: 'Glyphicons Halflings';
+                                src:url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.eot');
+                                src:url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+                                        url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.woff') format('woff'),
+                                        url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+                                        url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+                        }
+                </style>
+
+                <!-- Themes -->
+                <link rel="stylesheet" href="../dist/themes/bars-1to10.css">
+                <link rel="stylesheet" href="../dist/themes/bars-movie.css">
+                <link rel="stylesheet" href="../dist/themes/bars-square.css">
+                <link rel="stylesheet" href="../dist/themes/bars-pill.css">
+                <link rel="stylesheet" href="../dist/themes/bars-reversed.css">
+                <link rel="stylesheet" href="../dist/themes/bars-horizontal.css">
+
+                <link rel="stylesheet" href="../dist/themes/fontawesome-stars.css">
+                <link rel="stylesheet" href="../dist/themes/css-stars.css">
+                <link rel="stylesheet" href="../dist/themes/bootstrap-stars.css">
+
+                <!-- Fonts -->
+                <link href="http://fonts.googleapis.com/css?family=Lato:300,400,600" rel="stylesheet" type="text/css">
+                <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+		
+	</head>
+
+	<body>
+        <div class="controls">
+                                <a href="#" class="deactivated rating-enable">enable</a>
+                                <a href="#" class="rating-disable">disable</a>
+                        </div>
+
+        <div class="row">
+                <div class="col">
+                        <div class="br-wrapper box box-blue box-example-movie">
+                                                                        <div class="box-header">Movie Rating</div>
+                                                                        <div class="box-body">
+                                                                                <select id="example-movie" name="rating">
+                                                                                        <option value="Bad">Bad</option>
+                                                                                        <option value="Mediocre">Mediocre</option>
+                                                                                        <option value="Good" selected="selected">Good</option>
+                                                                                        <option value="Awesome">Awesome</option>
+                                                                                </select>
+                                                                        </div>
+                                                                </div>
+		
+                </div>
+                </div>
+                
+
+	</body>
+</html>

@@ -5,41 +5,25 @@
 	<head>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+        
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename="apna.css") }}" />
 
-		<script type="text/javascript">
-		  var fill = d3.scale.category20();
+        <script type="text/javascript">
+        	function generateStars(divLabel, numOfStars) {
+        		maxstars = 5;
+        		console.log(divLabel);
+        		text = "<span class=\"starRating\">";
+        		for (i=1; i <= maxstars; i++) {
+        			if (i <= numOfStars)
+        				text += "<img src='/static/star-on.svg' class='staron'>";
+        			else
+        				text += "<img src='/static/star-off.svg' class='staroff'>";
+        		}
+        		text += "</span>";
+        		document.getElementById(divLabel).innerHTML += text;
+        	}
+        </script>
 
-		 var text = 'Now we’ll integrate everything we’ve learned so far to generate a simple bar chart with D3. We’ll start by reviewing the bar chart we made earlier using div elements. Then we’ll adapt that code to draw the bars with SVG instead, giving us more flexibility over the visual presentation. Finally, we’ll add labels, so we can see the data values clearly.';
-
-		  d3.layout.cloud().size([300, 300])
-		      .words(text.split(" ").map(function(d) {
-		        return {text: d, size: 10 + Math.random() * 50};
-		      }))
-		      .rotate(function() { return ~~(Math.random() * 2) * 90; })
-		      .font("Impact")
-		      .fontSize(function(d) { return d.size; })
-		      .on("end", draw)
-		      .start();
-
-		  function draw(words) {
-		    d3.select("body").append("svg")
-		        .attr("width", 300)
-		        .attr("height", 300)
-		      .append("g")
-		        .attr("transform", "translate(150,150)")
-		      .selectAll("text")
-		        .data(words)
-		      .enter().append("text")
-		        .style("font-size", function(d) { return d.size + "px"; })
-		        .style("font-family", "Impact")
-		        .style("fill", function(d, i) { return fill(i); })
-		        .attr("text-anchor", "middle")
-		        .attr("transform", function(d) {
-		          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-		        })
-		        .text(function(d) { return d.text; });
-		  }
-		</script>
 	</head>
 
 	<body>
@@ -47,7 +31,14 @@
 			<h1> {{ name }} </h1>
 			<ul>
 				{% for key, value in cat_score.iteritems() %}
-				<li><span> {{ key }} </span> : <span> {{ value }} </span></li>
+				<li><span> {{ key }} </span> : <span> 
+				
+					<div id="category_{{key}}" > </div>
+					<script>
+						generateStars("category_{{key}}", Math.round({{ value }} * 5) );
+					</script>
+				
+				</span></li>
 				{%endfor%}
 			</ul>
 
