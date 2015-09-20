@@ -75,4 +75,4 @@ def get_data(count):
     
     df = pd.merge(df_review, df, on='business_id', how='outer')
     
-    return df
+    return df[df.restaurant]
