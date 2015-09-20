@@ -27,7 +27,7 @@ def single_review_to_sentences(review_text):
         #             current_sentence = " ".join(subtree.flatten().leaves())
         #             sentence_list.append(current_sentence)
         #         flag = False
-        tree.draw()
+        #tree.draw()
 
     return sentence_list
 
@@ -39,5 +39,3 @@ def reviews_to_sentences(reviews):
         all_sentences.extend(result)
     return all_sentences
 
-text = ["Decor is in a strange place and low key, some things are strange, but the restaurant, tables, and utensils are clean and ghetto.", "This is not an Awesome place.", "Bitch what you say?", "Great place."]
-print reviews_to_sentences(text)

@@ -32,10 +32,10 @@ def get_data(count):
             #print "converting to df", data_norm
             if df is None:
                 #print "df is None"
-                df = pd.DataFrame(data_norm)  
+                df = pd.DataFrame(data_norm[['business_id','categories', 'name']])  
             else:
                 #print "df has something"
-                df = df.append(pd.DataFrame(data_norm))
+                df = df.append(pd.DataFrame(data_norm[['business_id','categories', 'name']]))
             #print "Shape, ", df.shape
             count = count + 1
             if count > 100:

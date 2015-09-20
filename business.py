@@ -1,6 +1,6 @@
 import similarity as sim
 import sentiment as senti
-
+from reviewToSentences import reviews_to_sentences
 def get_business_score(reviews):
     sentences = reviews_to_sentences(reviews)
     final_cat = {"food":0, "service":0, "hygiene":0, "ambiance":0, "money":0}

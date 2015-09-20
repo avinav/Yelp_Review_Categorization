@@ -3,6 +3,14 @@
 
 
 <div class='yelp_review' style='width:100%'>
+	<h1> {{ name }} </h1>
+	<ul>
+		{% for key, value in cat_score.iteritems() %}
+		<li><span> {{ key }} </span> : <span> {{ value }} </span></li>
+		{%endfor%}
+	</ul>
+
+	</ul>
 	<ul>
 	{% for r in res %}
 		<li><span>{{ r }}</span></li>
