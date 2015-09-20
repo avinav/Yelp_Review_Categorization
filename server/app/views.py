@@ -16,7 +16,7 @@ def index():
     bus_id =  "wJr6kSA5dchdgOdwH6dZ2w"
     res = get_reviews(bus_id)
     try:
-        cat_score  = get_business_score(res)
+        cat_score  = get_business_score(res,bus_id)
         name = np.unique(reviews_df[reviews_df.business_id == bus_id].name)[0]
         print res
         return render_template("index.html",
@@ -24,7 +24,8 @@ def index():
                                cat_score = cat_score,
                                res = res,
                                name = name)
-    except :
+    except Exception as e:
+        print e
         print "nan",res
         return render_template("index.html",
         title = "Yelp Review Categorization",
@@ -44,7 +45,7 @@ def all_restaurants():
         print _id
         reviews = get_reviews(_id)
         try:
-            cat_score = get_business_score(reviews)
+            cat_score = get_business_score(reviews,_id)
             _dict['cat_score'] = cat_score
             data.append(_dict)
         except:

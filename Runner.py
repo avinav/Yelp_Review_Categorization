@@ -18,7 +18,7 @@ for _id in id_list:
     print _id
     reviews = get_reviews(_id)
     try:
-        cat_score = get_business_score(reviews)
+        cat_score = get_business_score(reviews,_id)
         _dict['cat_score'] = cat_score
         data.append(_dict)
     except:

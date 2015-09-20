@@ -4,6 +4,7 @@ from reviewToSentences import reviews_to_sentences
 import collections
 import operator
 from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 def get_business_score(reviews, id):
     sentences = reviews_to_sentences(reviews)
@@ -37,10 +38,10 @@ def get_business_score(reviews, id):
     new_a = dict(sorted(items_amb.iteritems(), key=operator.itemgetter(1), reverse=True)[:total_sen])
     new_m = dict(sorted(items_money.iteritems(), key=operator.itemgetter(1), reverse=True)[:total_sen])
     
-    f = " ".join(news_f.keys())
-    s = " ".join(news_s.keys())
-    a = " ".join(news_a.keys())
-    m = " ".join(news_m.keys())
+    f = " ".join(new_f.keys())
+    s = " ".join(new_s.keys())
+    a = " ".join(new_a.keys())
+    m = " ".join(new_m.keys())
     write_image(f, s, a, m, id)
 
     return final_cat
@@ -48,11 +49,11 @@ def get_business_score(reviews, id):
 
 def write_image(new_f, new_s, new_a, new_m, id):
     
-    import matplotlib.pyplot as plt
-    w_image(news_f, id+'_f.png')
-    w_image(news_s, id+'_s.png')
-    w_image(news_a, id+'_a.png')
-    w_image(news_m, id+'_m.png')
+    
+    w_image(new_f,'app/static/'+ id+'_f.png')
+    w_image(new_s,'app/static/'+ id+'_s.png')
+    w_image(new_a,'app/static/'+  id+'_a.png')
+    w_image(new_m,'app/static/'+  id+'_m.png')
 
 def w_image(text, name):
 
