@@ -20,14 +20,14 @@ def index():
                            res = res,
                            name = name)
 
-@app.route('/all',method = ['GET', 'POST'])
+@app.route('/all', methods = ['GET', 'POST'])
 def all_restaurants():
-    id_list = np.unique(reviews_df.id)
+    id_list = np.unique(reviews_df.business_id)
     data = []
     for _id in id_list:
         _dict = {}
         _dict['id'] = _id
-        _dict['name'] = np.unique(reviews_df[reviews_df.business_id == _id])[0].name
+        _dict['name'] = np.unique(reviews_df[reviews_df.business_id == _id].name)[0]
         reviews = get_reviews(_id)
         cat_score = get_business_score(reviews)
         _dict['cat_score'] = cat_score
