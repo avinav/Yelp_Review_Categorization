@@ -11,7 +11,7 @@ def get_business_score(reviews):
         if sentr != 0.5:
             cat = sim.get_similarity(sent)
             final_cat[cat] = sentr + final_cat[cat]
-        	cat_count[cat] = 1 + cat_count[cat]        
+            cat_count[cat] = 1 + cat_count[cat]        
     for key in final_cat.keys():
             final_cat[key] = final_cat[key] / (1.0 * cat_count[key])
     
