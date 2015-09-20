@@ -13,7 +13,9 @@ from pandas.io.json import json_normalize
 
 #file = '/home/zstring/Dropbox/UB/GDG/yelp_dataset_challenge_academic_dataset/smalldataset'
 def get_data(count):
-    file = '/home/avinav/Dropbox/git/Yelp/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_business.json'
+    
+    #path = '/home/avinav/Dropbox/git/Yelp/yelp_dataset_challenge_academic_dataset'
+    path = "/home/castamere/Downloads/yelp_dataset_challenge_academic_dataset"
     df = None
     count = 0
     TOTAL_COUNT = count
@@ -42,7 +44,7 @@ def get_data(count):
                 break
     df['restaurant'] = ['Restaurants' in category for category in df.categories]
     
-    file = '/home/avinav/Dropbox/git/Yelp/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_review.json'
+    file = path + "/yelp_academic_dataset_review.json"
     df_review = None
     count = 0
     with open(file) as f:
