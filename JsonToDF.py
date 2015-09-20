@@ -14,8 +14,8 @@ from pandas.io.json import json_normalize
 #file = '/home/zstring/Dropbox/UB/GDG/yelp_dataset_challenge_academic_dataset/smalldataset'
 def get_data(count):
 
-    #path = '/home/avinav/Dropbox/git/Yelp/yelp_dataset_challenge_academic_dataset'
-    path = "/home/castamere/Downloads/yelp_dataset_challenge_academic_dataset"
+    path = '/home/avinav/Dropbox/git/Yelp/yelp_dataset_challenge_academic_dataset'
+    #path = "/home/castamere/Downloads/yelp_dataset_challenge_academic_dataset"
 
     file = path + "/yelp_academic_dataset_business.json"
     df = None
