@@ -6,7 +6,7 @@
 	{% for _dict in data %}	
 	<h2> {{ _dict["name"] }} </h2>
 	<ul>
-		{% for key, value in _data["cat_score"].iteritems() %}
+		{% for key, value in _dict["cat_score"].iteritems() %}
 		<li><span> {{ key }} </span> : <span> {{ value }} </span></li>
 		{%endfor%}
 	</ul>
