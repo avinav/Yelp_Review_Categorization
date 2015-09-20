@@ -8,7 +8,8 @@ import numpy as np
 @app.route('/', methods = ['GET','POST'])
 @app.route('/index', methods = ['GET','POST'])
 def index():
-    bus_id = "vcNAWiLM4dR7D2nwwJ7nCA"
+    #bus_id = "vcNAWiLM4dR7D2nwwJ7nCA"
+    bus_id = "mVHrayjG3uZ_RLHkLj-AMg"
     res = get_reviews(bus_id)
     cat_score  = get_business_score(res)
     name = np.unique(reviews_df[reviews_df.business_id == bus_id].name)[0]

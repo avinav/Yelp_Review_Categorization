@@ -5,7 +5,7 @@ from textblob import Word
 def get_similarity(sentence):
 	sentence_words = sentence.split(" ")
 	#sentence_words = ["this", "restaurant", "has", "cheap"]
-	categories = ["food", "service", "ambiance", "money"]
+	categories = ["food", "service", "hygiene", "ambiance", "money"]
 	categories_score = [0, 0, 0, 0, 0]
 
 	for i in range (0, 5):
