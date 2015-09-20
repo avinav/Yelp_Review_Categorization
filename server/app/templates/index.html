@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class='yelp_review' style='width:100%'>
+	<ul>
+	{% for r in res %}
+		<li><span>{{ r }}</span></li>
+	{% endfor %}
+	</ul>
+</div>
+
+{% endblock %}

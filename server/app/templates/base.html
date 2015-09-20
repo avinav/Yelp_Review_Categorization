@@ -1,0 +1,18 @@
+<html>
+	<head>
+	{% if title %}
+	<title>{{ title }}</title>
+	{% else %}
+	<title>Yelp Review Categorization</title>
+	{% endif %}
+	</head>
+	<body>
+		<div class='banner'>
+			<div align='center'>
+				<span style='font-size:28'>Yelp Review Categorization</span>
+			</div>
+		</div>
+	<hr>
+	{% block content %}{% endblock %}
+	</body>
+</html>
