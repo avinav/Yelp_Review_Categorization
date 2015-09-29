@@ -1,6 +1,6 @@
 # Yelp_Review_Categorization
-Url: http://avinav.science:4000/
-ategorizing Yelp text-reviews into ratings
+##Url: http://avinav.science:4000/
+Categorizing Yelp text-reviews into ratings
 (This was done in the Google DevFest Buffalo 2015 (24 hours), starting from the idea to deployment in aws)
 
 We try to understand the sentiments and various topics in reviews for Yelp businesses. We propose that this data, a feedback rating in various facets of business, will greatly help them to understand customer response. 
